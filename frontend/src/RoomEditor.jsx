@@ -37,7 +37,6 @@ export default function RoomEditor() {
     useEffect(() => {
         if (!editor) return;
 
-        // Throttled update function — sends at most every 300ms
         const throttledEmit = throttle(() => {
             const html = editor.getHTML();
             socketRef.current.emit('send-changes', { roomId, content: html });

@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const Room = require('../models/Room');
 
-// Create or get a room
 router.post('/create', async (req, res) => {
     const { roomId } = req.body;
     if (!roomId) return res.status(400).json({ message: 'Room ID is required' });
@@ -19,7 +18,6 @@ router.post('/create', async (req, res) => {
     }
 });
 
-// Get room by ID
 router.get('/:roomId', async (req, res) => {
     try {
         const room = await Room.findOne({ roomId: req.params.roomId });
@@ -30,7 +28,6 @@ router.get('/:roomId', async (req, res) => {
     }
 });
 
-// Update room content
 router.put('/:roomId', async (req, res) => {
     try {
         const { content } = req.body;

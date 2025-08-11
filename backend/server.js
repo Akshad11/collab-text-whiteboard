@@ -5,14 +5,14 @@ const cors = require('cors');
 require('dotenv').config();
 
 const roomRoutes = require('./routes/roomRoutes');
-const Room = require('./models/Room'); // Don't forget to import your Room model
+const Room = require('./models/Room');
 
 const app = express();
 const server = http.createServer(app);
 const { Server } = require('socket.io');
 const io = new Server(server, {
     cors: {
-        origin: 'https://collab-text-whiteboard.vercel.app', // Replace with your actual frontend domain
+        origin: 'https://collab-text-whiteboard.vercel.app',
         methods: ['GET', 'POST'],
         allowedHeaders: ['Content-Type'],
         credentials: true,
@@ -23,7 +23,6 @@ app.use(cors());
 app.use(express.json());
 app.use('/api/rooms', roomRoutes);
 
-// On socket connection
 io.on('connection', socket => {
     console.log('⚡️ A user connected:', socket.id);
 
@@ -31,16 +30,13 @@ io.on('connection', socket => {
         socket.join(roomId);
         console.log(`User ${socket.id} joined room ${roomId}`);
 
-        // Send current content
         const room = await Room.findOne({ roomId });
         if (room) socket.emit('room-content', { content: room.content });
     });
 
     socket.on('send-changes', async ({ roomId, content }) => {
-        // Broadcast updates to other users in room
         socket.to(roomId).emit('receive-changes', { content });
 
-        // Persist content in DB
         await Room.findOneAndUpdate({ roomId }, { content }, { new: true, upsert: true });
     });
 
