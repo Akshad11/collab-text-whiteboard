@@ -1,0 +1,59 @@
+# files for frontend
+# 1️⃣ Create Vite React project
+npm create vite@latest frontend -- --template react
+cd frontend
+
+# 2️⃣ Install dependencies
+npm install react-router-dom socket.io-client @tiptap/react @tiptap/starter-kit tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+
+# 3️⃣ Create folder structure
+mkdir "src\components\Editor"
+mkdir "src\pages"
+mkdir "src\hooks"
+mkdir "src\utils"
+
+# 4️⃣ Create files
+ni "src\App.jsx" -ItemType File
+ni "src\main.jsx" -ItemType File
+ni "src\pages\Home.jsx" -ItemType File
+ni "src\pages\Room.jsx" -ItemType File
+ni "src\components\Editor\Editor.jsx" -ItemType File
+ni "src\components\Editor\EditorToolbar.jsx" -ItemType File
+ni "src\components\RoomLink.jsx" -ItemType File
+ni "src\components\UserList.jsx" -ItemType File
+ni "src\hooks\useSocket.js" -ItemType File
+ni "src\utils\generateRoomId.js" -ItemType File
+ni "src\index.css" -ItemType File
+
+# 5️⃣ Remove default Vite files
+Remove-Item "src\App.css"
+Remove-Item "src\assets\react.svg"
+
+
+# files for backend
+# 1️⃣ Create backend folder and enter it
+
+mkdir backend
+cd backend
+mkdir src
+mkdir src\models
+mkdir src\routes
+mkdir src\controllers
+mkdir src\config
+mkdir src\utils
+mkdir public
+mkdir uploads
+type nul > src\server.js
+type nul > src\app.js
+type nul > package.json
+
+
+# 2️⃣ Init project
+npm init -y
+
+# 3️⃣ Install dependencies
+npm install express socket.io cors
+
+# 4️⃣ Create server.js
+ni "server.js" -ItemType File
