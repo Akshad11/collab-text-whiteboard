@@ -15,7 +15,8 @@ export default function RoomEditor() {
     });
 
     useEffect(() => {
-        socketRef.current = io('http://localhost:5000');
+        const apiUrl = 'https://collab-text-whiteboard.onrender.com/api/rooms';
+        socketRef.current = io(apiUrl);
         socketRef.current.emit('join-room', { roomId });
 
         socketRef.current.on('room-content', ({ content }) => {

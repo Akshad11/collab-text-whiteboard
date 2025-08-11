@@ -11,7 +11,12 @@ const app = express();
 const server = http.createServer(app);
 const { Server } = require('socket.io');
 const io = new Server(server, {
-    cors: { origin: '*' } // adjust for production
+    cors: {
+        origin: 'https://collab-text-whiteboard.vercel.app', // Replace with your actual frontend domain
+        methods: ['GET', 'POST'],
+        allowedHeaders: ['Content-Type'],
+        credentials: true,
+    },
 });
 
 app.use(cors());

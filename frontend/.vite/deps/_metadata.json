@@ -1,0 +1,64 @@
+{
+  "hash": "801c46cc",
+  "configHash": "f3813632",
+  "lockfileHash": "3763bf2a",
+  "browserHash": "86e1987b",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "314b901a",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "6c9f6f8a",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.mjs",
+      "file": "react-router-dom.js",
+      "fileHash": "d3937ce0",
+      "needsInterop": false
+    },
+    "@tiptap/react": {
+      "src": "../../node_modules/@tiptap/react/dist/index.js",
+      "file": "@tiptap_react.js",
+      "fileHash": "b77ea58c",
+      "needsInterop": false
+    },
+    "@tiptap/starter-kit": {
+      "src": "../../node_modules/@tiptap/starter-kit/dist/index.js",
+      "file": "@tiptap_starter-kit.js",
+      "fileHash": "1856cbd9",
+      "needsInterop": false
+    },
+    "socket.io-client": {
+      "src": "../../node_modules/socket.io-client/build/esm/index.js",
+      "file": "socket__io-client.js",
+      "fileHash": "37b59fa6",
+      "needsInterop": false
+    },
+    "lodash/throttle": {
+      "src": "../../node_modules/lodash/throttle.js",
+      "file": "lodash_throttle.js",
+      "fileHash": "547ff512",
+      "needsInterop": true
+    }
+  },
+  "chunks": {
+    "chunk-FYGYNQUM": {
+      "file": "chunk-FYGYNQUM.js"
+    },
+    "chunk-32EALFBN": {
+      "file": "chunk-32EALFBN.js"
+    },
+    "chunk-L2QYOVTX": {
+      "file": "chunk-L2QYOVTX.js"
+    },
+    "chunk-G3PMV62Z": {
+      "file": "chunk-G3PMV62Z.js"
+    }
+  }
+}
