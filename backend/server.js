@@ -12,10 +12,10 @@ const server = http.createServer(app);
 const { Server } = require('socket.io');
 const io = new Server(server, {
     cors: {
-        origin: 'https://collab-text-whiteboard.vercel.app',
-        methods: ['GET', 'POST'],
-        allowedHeaders: ['Content-Type'],
-        credentials: true,
+        origin: '*'//'https://collab-text-whiteboard.vercel.app',
+        // methods: ['GET', 'POST'],
+        // allowedHeaders: ['Content-Type'],
+        // credentials: true,
     },
 });
 
